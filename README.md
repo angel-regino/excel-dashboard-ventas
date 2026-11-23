@@ -1,57 +1,42 @@
-# Análisis de ventas y dashboard en Excel
+# Análisis de Ventas y Dashboard en Excel · Enero – Junio 2026
 
-**Proyecto de práctica · Excel · 2026**
+![Dashboard](dashboard.png)
 
-Autor: Angel Regino
+## Objetivo
+Entender qué productos, regiones y vendedores generan las ventas **y la utilidad** de una tienda de electrónica, muebles y papelería, para decidir dónde enfocar el negocio.
 
-![Dashboard de ventas](dashboard.png)
+## Datos
+- 120 ventas de enero a junio de 2026 (datos de práctica creados para el proyecto)
+- 9 productos · 3 categorías · 4 regiones · 8 vendedores
+- Catálogos de costos por producto y comisiones por vendedor
+
+## Qué hice
+1. **Organicé el archivo** en hojas separadas: Inicio, Dashboard, Ventas, Análisis, Cálculos, Catálogos y Documentación.
+2. **Preparé los datos** como tabla de Excel, con formatos de fecha, moneda y porcentaje.
+3. **Crucé tablas con BUSCARX** para traer el costo de cada producto y la comisión de cada vendedor.
+4. **Calculé nuevas métricas:** costo, utilidad bruta, margen, comisión y venta en dólares.
+5. **Respondí preguntas de negocio** con CONTAR.SI, SUMAR.SI y sus versiones .CONJUNTO.
+6. **Revisé la calidad de los datos:** duplicados, celdas vacías, productos sin costo y vendedores fuera del catálogo.
+7. **Construí un dashboard interactivo** con filtros de región y categoría, 6 KPIs y 4 gráficos.
+
+## Hallazgos principales
+| # | Hallazgo |
+|---|---|
+| 1 | La **Laptop** genera el **50% de las ventas**, pero solo el **18% de la utilidad** (margen de 10%). |
+| 2 | **Muebles** es el 22% de las ventas y el **37% de la utilidad** (margen de 46%). |
+| 3 | Las ventas son inestables: **mayo casi triplica a abril**, impulsado por Electrónica. |
+| 4 | **Norte** es la región que más vende, pero **Centro** es la que más utilidad deja. |
+| 5 | **Calidad de datos:** Valeria tiene 11 ventas ($74,220) y no está en el catálogo de vendedores, así que su comisión no se puede calcular. |
+
+## Recomendación
+Mantener la Laptop como producto de entrada, pero ofrecer accesorios y muebles en cada venta para subir el margen. Dar de alta a Valeria en el catálogo para pagar sus comisiones correctamente.
+
+## Herramientas
+Microsoft Excel: tablas, BUSCARX, SUMAR.SI.CONJUNTO, CONTAR.SI.CONJUNTO, validación de datos (filtros), formato condicional y gráficos.
+
+## Archivos
+- `Analisis_Ventas_2026.xlsx`: archivo completo (abre la hoja **Inicio**)
+- `dashboard.png`: vista del dashboard
 
 ---
-
-## 1. El problema
-
-Una tienda de electrónica, muebles y papelería quiere entender **de dónde viene su dinero** y **qué tan estables son sus ventas**, para decidir en qué productos enfocarse.
-
-Preguntas de negocio:
-1. ¿Cuánto vende la tienda y cuál es el ticket promedio?
-2. ¿Qué productos, regiones y vendedores generan más dinero?
-3. ¿Cómo cambian las ventas mes a mes?
-4. ¿Qué riesgos tiene el negocio?
-
-## 2. Los datos
-
-Datos de práctica de **120 ventas** (enero a junio de 2026), con fecha, región, vendedor, producto, categoría, cantidad y precio. El archivo tiene 6 hojas:
-
-| Hoja | Contenido |
-|---|---|
-| **Dashboard** | KPIs, gráficos y conclusiones en una sola pantalla |
-| **Ventas** | Los datos de cada venta, con columnas calculadas (total, costo, comisión, total en USD, mes) |
-| **Costos** | Costo unitario de cada producto (tabla de consulta) |
-| **Vendedores** | Nivel y % de comisión de cada vendedor (tabla de consulta) |
-| **Resumen** | Indicadores, preguntas de negocio con su fórmula y ventas por producto |
-| **Dinámica** | Tabla dinámica de ventas por mes y categoría |
-
-## 3. Lo que hice
-
-- **Columnas calculadas:** total por venta y conversión a dólares con un tipo de cambio fijo (referencias absolutas `$`).
-- **BUSCARX:** traje el costo de cada producto y la comisión de cada vendedor desde otras tablas, como un JOIN. Detecté un vendedor que no estaba registrado y lo manejé con un mensaje claro en lugar de un error `#N/D`.
-- **CONTAR.SI, SUMAR.SI y sus versiones .CONJUNTO:** respondí preguntas con una o varias condiciones (por ejemplo, ventas de Electrónica en la región Norte).
-- **Tablas dinámicas:** ventas por región, vendedor, producto y mes.
-- **Formato condicional:** resalté las ventas mayores a $10,000 y apliqué una escala de colores por producto.
-- **Gráficos:** columnas para comparar productos y líneas para ver la tendencia por mes.
-- **Dashboard:** 3 KPIs, 2 gráficos y conclusiones.
-
-**Herramienta:** Microsoft Excel (Excel en línea / Microsoft 365). BUSCARX requiere Excel 365 o 2021.
-
-## 4. Lo que descubrí
-
-- **La Laptop es el producto estrella:** genera el **50% de las ventas** ($450,000 de $901,695).
-- **Principio de Pareto:** el **20% de las ventas** (las mayores a $10,000) genera el **66% del dinero**.
-- **Electrónica es la categoría más grande y la más volátil:** pasó de $27,600 en abril a $206,400 en mayo. En abril, Muebles la rebasó.
-- **Vender más veces no es vender más dinero:** Carlos hizo más ventas (20), pero Sofía generó más dinero ($157,450) porque vende más laptops.
-
-### Recomendaciones
-1. Mantener las laptops como motor del negocio, cuidando su inventario y precio con proveedores.
-2. Impulsar Muebles, que es más estable, y la venta de accesorios junto con cada laptop (audífonos, mochilas).
-3. Evaluar a los vendedores por monto y ticket promedio, no solo por número de ventas.
-4. Registrar a la vendedora Valeria en la tabla de comisiones (dato faltante detectado).
+**Autor:** Angel Regino Cabrera · [github.com/angel-regino](https://github.com/angel-regino)
